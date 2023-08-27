@@ -30,18 +30,17 @@ function Text(props){
             newText += ch;
 
         }
-        console.log(newText);
+       
         
         setText(newText);
     }
-    function camelCase(){
-
-    }
+   
     return (
         <div className="mb-3">
         <h1>{props.heading}</h1>
         <div className="form-outline">
-        <textarea className={`form-control ${props.mode === "light"?"white":"grey" } `} id="myBox" rows="8" value= {text} onChange={handleOnChange}></textarea>
+        <textarea className="form-control"  id="myBox" rows="10" value= {text} 
+        style={{backgroundColor:props.mode === "white"?"white":"grey",color:props.mode === "white"?"black":"white"}}  onChange={handleOnChange}></textarea>
         </div>
         <button type="button" className="btn btn-primary my-3 me-1" onClick={Lower}>lowercase</button>
         <button type="button" className="btn btn-primary my-3 me-1" onClick={Upper}>UPPERCASE</button>
