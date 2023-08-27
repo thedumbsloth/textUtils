@@ -1,8 +1,23 @@
+html,body{
+    height:100%;
+}
+#root{
+    height:100%;
+}
 .dark{
-    background-color: black;
+    height:100%;
+    background-color: #042743;
     color:white;
+   
 }
 .light{
+    height:100%;
     background-color: white;
-    color:black;
+    color:rgb(93, 45, 45);
+}
+.white{
+    background-color:white;
+}
+.grey{
+    background-color: grey;
 }
