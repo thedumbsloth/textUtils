@@ -1,8 +1,6 @@
 import react, { useState } from "react";
 import reactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import Text from "./components/Text";
 import "./App.css";
 
@@ -36,33 +34,23 @@ function App() {
   }
   return (
     <>
-    <Router>
-    <div
-      style={{
-        backgroundColor: color === "" ? mode : color,
-        color: mode === "white" ? "black" : "white",
-        height: "100%",
-      }}
-    >
-      <Navbar
-        mode={mode}
-        toggleMode={toggleMode}
-        handleOnClick={handleOnClick}
-      />
-      
+      <div
+        style={{
+          backgroundColor: color === "" ? mode : color,
+          color: mode === "white" ? "black" : "white",
+          height: "100%",
+        }}
+      >
+        <Navbar
+          mode={mode}
+          toggleMode={toggleMode}
+          handleOnClick={handleOnClick}
+        />
+
         <div className="container my-3">
-          <Routes>
-            <Route exact path="/about" element={<About />}></Route>
-            <Route
-              exact
-              path="/"
-              element={<Text heading="Enter the text to analyze" mode={mode} />}
-            ></Route>
-          </Routes>
+          <Text heading="Enter the text to analyze" mode={mode} />
         </div>
-      
-    </div>
-    </Router>
+      </div>
     </>
   );
 }
